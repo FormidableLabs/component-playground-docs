@@ -1,16 +1,11 @@
 /* global window */
 import React from "react";
-import ga from "react-ga";
 import Radium, { Style, StyleRoot } from "radium";
 
 // Variables and Stylesheet
 import { Header } from "formidable-landers";
 
 class App extends React.Component {
-  componentDidMount() {
-    ga.initialize("UA-43290258-1");
-  }
-
   render() {
     const isBrowser = typeof window !== "undefined" && window.__STATIC_GENERATOR !== true;
     return (
