@@ -1,19 +1,38 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Ecology from "ecology";
-import ComponentPlaygroundDocs from "../../../node_modules/component-playground/README.md";
+import { VictoryPie } from "victory";
+import { random, range } from "lodash";
+import Radium from "radium";
+import { Link } from "react-router";
+const RadiumLink = Radium(Link);
+
+const componentExample = require("!!raw!./examples/componentExample.md");
 
 class Home extends React.Component {
   render() {
     return (
-    <Ecology
-      overview={ComponentPlaygroundDocs}
-      scope={{
-        React, ReactDOM
-      }}
-      playgroundtheme="elegant"
-    />
-  );
+      <div>
+        <h1>Component Playground</h1>
+        <p>Render React.js components with editable source and live preview</p>
+        <pre><code>npm install component-playground</code></pre>
+        <Ecology
+          overview={componentExample}
+          scope={{React, VictoryPie, ReactDOM, random, range}}
+          playgroundtheme="elegant"
+        />
+        <a href="https://github.com/FormidableLabs/component-playground">Source Code on GitHub</a>
+        <br/>
+        <a href="https://github.com/FormidableLabs/component-playground/issues">Report an Issue</a>
+        <h2>Features</h2>
+          <ul>
+            <li>Allow editing of source code to illustrate changes</li>
+            <li>Live preview of React components</li>
+            <li>Great for tutorials and walkthroughs</li>
+          </ul>
+        <RadiumLink to="/docs/getting-started">Let's Get Started</RadiumLink>
+      </div>
+    );
   }
 }
 
