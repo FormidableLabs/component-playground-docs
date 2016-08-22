@@ -13,9 +13,6 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        {/*The about and docs links will live in the header once added*/}
-        <RadiumLink to="/about">About</RadiumLink>
-        <RadiumLink to="/docs">Docs</RadiumLink>
         <h1>Component Playground</h1>
         <p>Render React.js components with editable source and live preview</p>
         <pre><code>npm install component-playground</code></pre>
@@ -34,7 +31,7 @@ class Home extends React.Component {
             <li>Live preview of React components</li>
             <li>Great for tutorials and walkthroughs</li>
           </ul>
-        <RadiumLink to="/docs/getting-started">Let's Get Started</RadiumLink>
+        <RadiumLink to="/docs/getting-started">Let&#8217;s Get Started</RadiumLink>
       </div>
     );
   }
