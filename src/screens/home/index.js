@@ -13,9 +13,13 @@ class Home extends React.Component {
   render() {
     return (
       <div>
+        {/*The about and docs links will live in the header once added*/}
+        <RadiumLink to="/about">About</RadiumLink>
+        <RadiumLink to="/docs">Docs</RadiumLink>
         <h1>Component Playground</h1>
         <p>Render React.js components with editable source and live preview</p>
         <pre><code>npm install component-playground</code></pre>
+        <iframe src="https://ghbtns.com/github-btn.html?user=formidablelabs&repo=component-playground&type=star&count=true&size=large" frameBorder="0" scrolling="0" width="160px" height="30px"></iframe>
         <Ecology
           overview={componentExample}
           scope={{React, VictoryPie, ReactDOM, random, range}}
