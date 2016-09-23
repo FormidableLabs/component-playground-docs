@@ -1,0 +1,67 @@
+.Sticky {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.formidableHeader-container,
+.formidableFooter-container,
+.Grid {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 0;
+  width: 100%;
+
+  @media (--medium-viewport) {
+    width: 95%;
+  }
+
+  @media (--large-viewport) {
+    width: 90%;
+  }
+}
+
+.Grid-col {
+  padding: 0 2%;
+
+  @media (--medium-viewport) {
+    padding: 0 4%;
+  }
+}
+
+.Main {
+  flex: 1 1 auto;
+  margin: var(--gutterSmall) 0 0;
+  padding: 0 0 var(--gutter) 0;
+  width: 100%;
+}
+
+.Main--internal {
+  background-color: var(--lightestGray);
+  box-shadow: 0 7px 50px 1px var(--gray);
+}
+
+.Page {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: var(--gutter);
+  margin-bottom: 0;
+
+  @media (--large-viewport) {
+    flex-wrap: nowrap;
+  }
+}
+
+.Page-sidebar {
+  flex: 1 1 100%;
+
+  @media (--large-viewport) {
+    flex: 0 0 auto;
+  }
+}
+
+.Page-content {
+  overflow: hidden;
+  width: 100%;
+}
