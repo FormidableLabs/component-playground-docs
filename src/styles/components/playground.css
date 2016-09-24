@@ -23,6 +23,7 @@
 
 .playgroundCode {
   font-size: 14px;
+  width: 100%;
 
   @media (--medium-viewport) {
     flex: 1 0 60%;
@@ -32,10 +33,13 @@
 
 .playgroundStage {
   background-color: var(--codeMirrorbg);
-  margin-left: -10%;
   max-height: 500px;
   padding: 2rem 10%;
   overflow: auto;
+
+  @media (--medium-viewport) {
+    margin-left: -10%;
+  }
 }
 
 .playgroundPreview {
