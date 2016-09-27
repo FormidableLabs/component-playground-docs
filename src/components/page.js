@@ -12,7 +12,10 @@ class Page extends React.Component {
         <div className="Grid">
           <section className="Page">
             <div className="Page-sidebar Grid-col">
-              <Sidebar />
+              <Sidebar
+                tocArray={this.props.tocArray}
+                location={this.props.location}
+              />
             </div>
             <div className={`${contentClasses} Grid-col`}>
               { this.props.children }
@@ -26,12 +29,15 @@ class Page extends React.Component {
 
 Page.propTypes = {
   children: React.PropTypes.node,
-  home: React.PropTypes.bool
+  home: React.PropTypes.bool,
+  tocArray: React.PropTypes.array,
+  location: React.PropTypes.object
 };
 
 Page.defaultProps = {
   children: null,
-  home: false
+  home: false,
+  tocArray: []
 };
 
 
