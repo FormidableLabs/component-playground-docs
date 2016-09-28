@@ -1,29 +1,86 @@
 import React from "react";
 import { Link } from "react-router";
 import Icon from "./icon";
-import { forEach } from "lodash";
 import basename from "../basename";
+import MarkdownIt from "markdown-it";
 
 class Sidebar extends React.Component {
+  renderTransformedToc(siblings, targetLocation) {
+    const md = MarkdownIt();
+
+    return (
+      <ul>
+        {
+          siblings.map((sibling, id) => {
+            if (Array.isArray(sibling)) {
+              return <li key={id}>{this.renderTransformedToc(sibling, targetLocation)}</li>;
+            }
+
+            return sibling && (
+              <li key={id}>
+                <a
+                  href={`${basename}${targetLocation}#${sibling.anchor}`}
+                  dangerouslySetInnerHTML={{__html: md.renderInline(sibling.content)}}
+                >
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    );
+  }
+
+  pushToDeeperLevel(siblings, levels, heading) {
+    let parentTarget = siblings;
+    let target;
+
+    while (levels-- > 0) {
+      target = parentTarget[parentTarget.length - 1];
+
+      if (Array.isArray(target)) {
+        parentTarget = target;
+      } else {
+        parentTarget.push([]);
+        parentTarget = parentTarget[parentTarget.length - 1];
+      }
+    }
+
+    if (Array.isArray(target)) {
+      target.push(heading);
+    } else {
+      parentTarget.push(heading);
+    }
+  }
+
+  transformTocArray(headings) {
+    const siblings = [];
+    const topHeading = headings[0];
+
+    for (let index = 0; index < headings.length; index++) {
+      const heading = headings[index];
+      const levelDiff = heading.level - topHeading.level;
+
+      if (levelDiff === 0) {
+        siblings.push(heading);
+      } else if (levelDiff > 0) {
+        this.pushToDeeperLevel(siblings, levelDiff, heading);
+      }
+    }
+
+    return siblings;
+  }
+
   renderToc(targetLocation) {
     if (!this.props.location || (this.props.location.pathname !== targetLocation)) {
       return null;
     }
 
-    const list = this.props.tocArray.filter(({level}) => level > 1);
+    const list = this.props.tocArray.filter((heading) => heading.level !== 1);
 
-    return (
-      <ul>
-        {
-          list.map((thing, id) => (
-            <li key={id}>
-              <a href={`${basename}${targetLocation}#${thing.anchor}`}>
-                {thing.content}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+    return this.renderTransformedToc(
+      this.transformTocArray(list),
+      targetLocation
     );
   }
 
