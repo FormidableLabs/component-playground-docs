@@ -10,7 +10,7 @@ class Sidebar extends React.Component {
     const md = MarkdownIt();
 
     return (
-      <ul>
+      <ul className="TOC">
         {
           siblings.map((sibling, id) => {
             if (Array.isArray(sibling)) {
@@ -18,7 +18,7 @@ class Sidebar extends React.Component {
             }
 
             return sibling && (
-              <li key={id}>
+              <li key={id} className="TOC-item">
                 <a
                   href={`${basename}${targetLocation}#${sibling.anchor}`}
                   dangerouslySetInnerHTML={{__html: md.renderInline(sibling.content)}}

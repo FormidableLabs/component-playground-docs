@@ -189,8 +189,13 @@ code {
 }
 
 a:link {
+  color: var(--darkRed);
   text-decoration: none;
   transition: color 250ms ease-in;
+}
+
+a:visited {
+  color: var(--darkestGray);
 }
 
 a:focus,
