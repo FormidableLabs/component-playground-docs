@@ -14,7 +14,11 @@ class Sidebar extends React.Component {
         {
           siblings.map((sibling, id) => {
             if (Array.isArray(sibling)) {
-              return <li key={id}>{this.renderTransformedToc(sibling, targetLocation)}</li>;
+              return (
+                <li className="TOC-item" key={id}>
+                  {this.renderTransformedToc(sibling, targetLocation)}
+                </li>
+              );
             }
 
             return sibling && (
