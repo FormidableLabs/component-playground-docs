@@ -10,15 +10,19 @@ class Sidebar extends React.Component {
     const md = MarkdownIt();
 
     return (
-      <ul>
+      <ul className="TOC">
         {
           siblings.map((sibling, id) => {
             if (Array.isArray(sibling)) {
-              return <li key={id}>{this.renderTransformedToc(sibling, targetLocation)}</li>;
+              return (
+                <li className="TOC-item" key={id}>
+                  {this.renderTransformedToc(sibling, targetLocation)}
+                </li>
+              );
             }
 
             return sibling && (
-              <li key={id}>
+              <li key={id} className="TOC-item">
                 <a
                   href={`${basename}${targetLocation}#${sibling.anchor}`}
                   dangerouslySetInnerHTML={{__html: md.renderInline(sibling.content)}}
