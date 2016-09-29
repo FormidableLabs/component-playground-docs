@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import Icon from "./icon";
 import basename from "../basename";
 import MarkdownIt from "markdown-it";
+import { times } from "lodash";
 
 class Sidebar extends React.Component {
   renderTransformedToc(siblings, targetLocation) {
@@ -31,11 +32,12 @@ class Sidebar extends React.Component {
     );
   }
 
-  pushToDeeperLevel(siblings, levels, heading) {
+  pushToLevel(siblings, level, heading) {
+    siblings = siblings.slice(0);
     let parentTarget = siblings;
     let target;
 
-    while (levels-- > 0) {
+    times(level, () => {
       target = parentTarget[parentTarget.length - 1];
 
       if (Array.isArray(target)) {
@@ -44,29 +46,25 @@ class Sidebar extends React.Component {
         parentTarget.push([]);
         parentTarget = parentTarget[parentTarget.length - 1];
       }
-    }
+    });
 
     if (Array.isArray(target)) {
       target.push(heading);
     } else {
       parentTarget.push(heading);
     }
+
+    return siblings;
   }
 
   transformTocArray(headings) {
-    const siblings = [];
+    let siblings = [];
     const topHeading = headings[0];
 
-    for (let index = 0; index < headings.length; index++) {
-      const heading = headings[index];
-      const levelDiff = heading.level - topHeading.level;
-
-      if (levelDiff === 0) {
-        siblings.push(heading);
-      } else if (levelDiff > 0) {
-        this.pushToDeeperLevel(siblings, levelDiff, heading);
-      }
-    }
+    headings.forEach((heading) => {
+      const level = heading.level - topHeading.level;
+      siblings = this.pushToLevel(siblings, level, heading);
+    });
 
     return siblings;
   }
