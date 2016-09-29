@@ -58,15 +58,12 @@ class Sidebar extends React.Component {
   }
 
   transformTocArray(headings) {
-    let siblings = [];
     const topHeading = headings[0];
 
-    headings.forEach((heading) => {
+    return headings.reduce((siblings, heading) => {
       const level = heading.level - topHeading.level;
-      siblings = this.pushToLevel(siblings, level, heading);
-    });
-
-    return siblings;
+      return this.pushToLevel(siblings, level, heading);
+    }, []);
   }
 
   renderToc(targetLocation) {
