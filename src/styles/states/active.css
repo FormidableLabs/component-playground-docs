@@ -24,6 +24,6 @@
 .formidableHeader-link.is-active,
 .formidableHeader-link.is-active:hover {
   border-bottom: 1px solid var(--red);
-  color: var(--red) !important;
+  color: var(--darkRed) !important;
   cursor: default;
 }

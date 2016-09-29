@@ -24,3 +24,19 @@
   margin: var(--gutterSmall) var(--gutterSmall) 0 0;
   flex-basis: auto;
 }
+
+.TOC {
+  border-left: 1px solid var(--white);
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.TOC .TOC {
+  padding-top: 0;
+}
+
+.TOC-item {
+  font-family: var(--fontBody);
+  font-size: 1rem;
+  line-height: 2;
+}
