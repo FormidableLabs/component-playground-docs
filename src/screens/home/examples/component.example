@@ -1,0 +1,42 @@
+class App extends React.Component {
+   constructor(props) {
+    super(props);
+    this.state = {data: this.getData()};
+  }
+
+  getData() {
+    const samples =  random(6, 10);
+    return range(samples).map((data) => {
+      return {
+        x: data,
+        y: random(3, 10),
+        label: `#${data}`
+      };
+    })
+  }
+
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({data: this.getData()});
+    }, 2000);
+  }
+
+  render() {
+    return (
+      <VictoryPie
+        data={this.state.data}
+        animate={{
+          duration: 1000,
+          onEnter: {
+            duration: 500,
+            before: () =>
+              ({y: 0, label: " "}),
+            after: (datum) =>
+              ({y: datum.y, label: "NEW"})
+          }
+        }}
+      />
+    );
+  }
+}
+ReactDOM.render(<App/>, mountNode);

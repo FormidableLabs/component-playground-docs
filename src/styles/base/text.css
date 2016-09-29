@@ -1,0 +1,8 @@
+.Heading {
+  font-family: var(--fontHeading);
+  font-size: 60px;
+  font-weight: normal;
+  line-height: 1.2;
+  margin: 0;
+  text-indent: -20px;
+}

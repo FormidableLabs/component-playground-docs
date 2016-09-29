@@ -1,0 +1,24 @@
+/*
+ * Horizontal text alignment
+ */
+.u-textCenter {
+  text-align: center !important;
+}
+/*.u-textLeft {
+  text-align: left !important;
+}
+.u-textRight {
+  text-align: right !important;
+}*/
+
+.u-marginTop {
+  margin-top: var(--gutter) !important;
+}
+
+.u-marginTopSmall {
+  margin-top: var(--gutterSmall) !important;
+}
+
+.u-noMarginTop {
+  margin-top: 0 !important;
+}

@@ -1,0 +1,26 @@
+/*
+* Styles for the <Sidebar /> nav component
+*/
+
+.Nav {
+  margin-bottom: var(--gutter);
+}
+
+.NavList {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  white-space: nowrap;
+
+  @media (--large-viewport) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+}
+
+.NavList-item {
+  margin: var(--gutterSmall) var(--gutterSmall) 0 0;
+  flex-basis: auto;
+}

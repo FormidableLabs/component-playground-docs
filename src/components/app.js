@@ -1,18 +1,54 @@
-/* global window */
 import React from "react";
-import Radium, { StyleRoot } from "radium";
+import { Link } from "react-router";
 
 // Variables and Stylesheet
-import { Header } from "formidable-landers";
+import { Header, Footer } from "formidable-landers";
+import "../styles/styles.css";
 
 class App extends React.Component {
   render() {
-    const isBrowser = typeof window !== "undefined" && window.__STATIC_GENERATOR !== true;
+    const Title = (
+      <Link to="/" className="Heading">
+        Component Playground
+      </Link>
+    );
+
     return (
-      <StyleRoot radiumConfig={isBrowser ? { userAgent: window.navigator.userAgent } : null}>
-        <Header/>
-        {this.props.children}
-      </StyleRoot>
+      <div className="Sticky">
+        <Header
+          logoProject={Title}
+          theme="light"
+          padding="60px 2%"
+          style={{
+            background: "transparent"
+          }}
+          styleBy={{
+            textIndent: "10px"
+          }}
+        >
+          <div className="default">
+            <Link to="/about" className="formidableHeader-link" activeClassName="is-active">
+              About
+            </Link>
+            <Link to="/docs" className="formidableHeader-link" activeClassName="is-active">
+              Docs
+            </Link>
+            <a href="https://github.com/FormidableLabs/component-playground/issues">
+              Issues
+            </a>
+            <a href="https://github.com/FormidableLabs/component-playground">
+              GitHub
+            </a>
+          </div>
+        </Header>
+        { this.props.children }
+        <Footer
+          padding="60px 2%"
+          style={{
+            margin: "auto 0 0"
+          }}
+        />
+      </div>
     );
   }
 }
@@ -25,4 +61,4 @@ App.defaultProps = {
   children: null
 };
 
-export default Radium(App);
+export default App;
