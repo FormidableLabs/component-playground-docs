@@ -62,8 +62,7 @@ class Markdown extends React.Component {
     });
 
     md.use(markdownItTocAndAnchor, {
-      anchorLinkSymbol: "heading anchor link",
-      anchorLinkSymbolClassName: "visually-hidden",
+      anchorLinkSymbol: "",
       anchorClassName: "Anchor",
       tocCallback: (tocMarkdown, tocArray) => {
         this.props.updateTocArray(tocArray);
