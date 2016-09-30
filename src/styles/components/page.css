@@ -61,7 +61,6 @@
 
 .Anchor {
   background: url("../../static/icon-link.svg") center left no-repeat;
-  /*float: left;*/
   position: absolute;
   left: -30px;
 
@@ -69,4 +68,5 @@
   line-height: 1;
   opacity: 0;
   width: 30px;
+  speak: none; /* Wishing for .screenreader-hidden class */
 }
