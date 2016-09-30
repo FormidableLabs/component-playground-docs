@@ -1,6 +1,7 @@
 import React from "react";
 
 import Page from "../../components/page";
+import TitleMeta from "../../components/title-meta";
 import Markdown from "./components/markdown";
 
 
@@ -19,16 +20,18 @@ class Docs extends React.Component {
 
   render() {
     return (
-      <Page
-        tocArray={this.state.tocArray}
-        location={this.props.location}
-      >
-        <Markdown
+      <TitleMeta title="Component Playground | Documentation">
+        <Page
+          tocArray={this.state.tocArray}
           location={this.props.location}
-          params={this.props.params}
-          updateTocArray={this.updateTocArray.bind(this)}
-        />
-      </Page>
+        >
+          <Markdown
+            location={this.props.location}
+            params={this.props.params}
+            updateTocArray={this.updateTocArray.bind(this)}
+          />
+        </Page>
+      </TitleMeta>
     );
   }
 }

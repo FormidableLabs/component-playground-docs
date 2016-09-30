@@ -30,13 +30,13 @@ pre[class*="language-"] {
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
   text-shadow: none;
-  background: #b3d4fc;
+  background: var(--codeMirrorbgFocused);
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
   text-shadow: none;
-  background: #b3d4fc;
+  background: var(--codeMirrorbgFocused);
 }
 
 @media print {
@@ -53,7 +53,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: #f5f2f0;
+  background: var(--codeMirrorbg);
 }
 
 /* Inline code */
@@ -67,11 +67,11 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #586e75;
+  color: var(--codeMirrorComment);
 }
 
 .token.punctuation {
-  color: #999;
+  color: var(--codeMirrorPunctuation);
 }
 
 .namespace {
@@ -85,7 +85,7 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-  color: #905;
+  color: var(--codeMirrorNumber);
 }
 
 .token.selector,
@@ -94,7 +94,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: #2aa198
+  color: var(--codeMirrorSelector)
 }
 
 .token.operator,
@@ -102,24 +102,24 @@ pre[class*="language-"] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  color: #a67f59;
+  color: var(--codeMirrorOperator);
   background: hsla(0, 0%, 100%, .5);
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: #268bd2;
+  color: var(--codeMirrorKeyword);
 }
 
 .token.function {
-  color: #DD4A68;
+  color: var(--codeMirrorFunction);
 }
 
 .token.regex,
 .token.important,
 .token.variable {
-  color: #e90;
+  color: var(--codeMirrorVariable);
 }
 
 .token.important,
