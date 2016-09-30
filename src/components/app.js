@@ -20,7 +20,7 @@ class App extends React.Component {
         <Header
           logoProject={Title}
           theme="light"
-          padding="60px 2%"
+          padding="3.75rem 2%"
           style={{
             background: "transparent"
           }}
