@@ -43,7 +43,7 @@ class App extends React.Component {
         </Header>
         { this.props.children }
         <Footer
-          padding="60px 2%"
+          padding="5rem 2% 6rem"
           style={{
             margin: "auto 0 0"
           }}

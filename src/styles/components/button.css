@@ -124,9 +124,15 @@
  */
 
 .btn--dark,
-.btn--dark:visited {
+.btn--dark:link {
   background-color: var(--black);
   color: var(--white);
+}
+
+
+.btn--dark:visited {
+  background-color: var(--black);
+  color: var(--lightestGray);
 }
 
 .btn--dark:focus,
