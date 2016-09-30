@@ -123,13 +123,22 @@ h6 {
 }
 
 h1 {
-  font-size: 3.75rem; /* 60px */
+  font-size: 3rem;
+
+  @media (--medium-viewport) {
+    font-size: 3.75rem; /* 60px */
+  }
 }
 
 h2 {
-  font-size: 3rem; /* 48px */
+  font-size: 2rem;
   letter-spacing: 0.175em;
   text-transform: uppercase;
+
+  @media (--medium-viewport) {
+    font-size: 3rem; /* 48px */
+  }
+
 }
 
 h3 {
