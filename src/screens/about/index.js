@@ -20,23 +20,23 @@ class About extends React.Component {
           </p>
           <p>
             Component Playground is a React component that renders editable source code and a live preview of other React components. It&#8217;s great for showing off your code, and for leveling up tutorials and walkthroughs.
-         </p>
-         <p>
-         {/*
-           TODO: Add Top 5 Contributors through the GitHub API
-           https://github.com/FormidableLabs/formidable-landers/issues/176
-        */}
-          <a href="https://github.com/FormidableLabs/component-playground/graphs/contributors">See Contributors to Component Playground.</a>
-        </p>
-        <p>
-        {/*
-          TODO: Extract Formidable blurb into formidable-landers
-          https://github.com/FormidableLabs/formidable-landers/issues/177
-        */}
-          Formidable is a Seattle-based consultancy and development shop, focused on open-source, full-stack JavaScript using React.js and Node.js, and the architecture of large-scale JavaScript applications. We build products for some of the world&#8217;s biggest companies, while helping their internal teams develop smart, thoughtful, and scalable systems.
-        </p>
-      </Page>
-    </TitleMeta>
+          </p>
+          <p>
+            {/*
+              TODO: Add Top 5 Contributors through the GitHub API
+              https://github.com/FormidableLabs/formidable-landers/issues/176
+           */}
+            <a href="https://github.com/FormidableLabs/component-playground/graphs/contributors">See Contributors to Component Playground.</a>
+          </p>
+          <p>
+          {/*
+            TODO: Extract Formidable blurb into formidable-landers
+            https://github.com/FormidableLabs/formidable-landers/issues/177
+          */}
+            Formidable is a Seattle-based consultancy and development shop, focused on open-source, full-stack JavaScript using React.js and Node.js, and the architecture of large-scale JavaScript applications. We build products for some of the world&#8217;s biggest companies, while helping their internal teams develop smart, thoughtful, and scalable systems.
+          </p>
+        </Page>
+      </TitleMeta>
     );
   }
 }
