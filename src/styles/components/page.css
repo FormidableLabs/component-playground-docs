@@ -37,7 +37,7 @@
   font-family: var(--fontHeading);
   font-size: 1.5rem;
   margin-top: var(--gutter);
-  margin-bottom: -1.375rem;
+  margin-bottom: -1rem;
 }
 
 /* Style the markdown links */

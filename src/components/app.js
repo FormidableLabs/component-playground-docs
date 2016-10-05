@@ -8,9 +8,11 @@ import "../styles/styles.css";
 class App extends React.Component {
   render() {
     const Title = (
-      <Link to="/" className="Heading">
-        Component Playground
-      </Link>
+      <h1 className="Heading">
+        <Link to="/">
+          Component Playground
+        </Link>
+      </h1>
     );
 
     return (
@@ -18,7 +20,7 @@ class App extends React.Component {
         <Header
           logoProject={Title}
           theme="light"
-          padding="60px 2%"
+          padding="3.75rem 2%"
           style={{
             background: "transparent"
           }}

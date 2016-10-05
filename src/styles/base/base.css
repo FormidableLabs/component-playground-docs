@@ -1,6 +1,11 @@
 html {
   background-color: var(--black);
   box-sizing: border-box;
+  font-size: 14px;
+
+  @media (--medium-viewport) {
+    font-size: 16px;
+  }
 }
 
 *, *:before, *:after {
@@ -11,13 +16,8 @@ body {
   background-color: var(--lightestGray);
   color: var(--black);
   font-family: var(--fontMonospace);
-  font-size: 14px;
   line-height: 1.75;
   position: relative;
-
-  @media (--medium-viewport) {
-    font-size: 16px;
-  }
 }
 
 /*
@@ -123,13 +123,17 @@ h6 {
 }
 
 h1 {
-  font-size: 3.75rem; /* 60px */
+  font-size: 3.75rem;
 }
 
 h2 {
-  font-size: 3rem; /* 48px */
+  font-size: 2rem;
   letter-spacing: 0.175em;
   text-transform: uppercase;
+
+  @media (--medium-viewport) {
+    font-size: 3rem;
+  }
 }
 
 h3 {

@@ -26,6 +26,7 @@
 .Hero-installer code {
   border: 0;
   font-size: inherit;
+  padding: 0;
 }
 
 .Hero-example {
