@@ -4,8 +4,9 @@
   "description": "Documentation site for Component Playground",
   "main": "webpack.config.dev.js",
   "scripts": {
-    "start": "builder run dev",
     "dev": "webpack-dev-server --port 3000 --config node_modules/builder-docs-archetype/config/webpack/webpack.config.dev.js --history-api-fallback",
+    "preversion": "builder run npm:preversion",
+    "start": "builder run dev",
     "test": "builder run lint",
     "update-project": "npm update component-playground"
   },
@@ -20,14 +21,14 @@
   },
   "homepage": "https://github.com/FormidableLabs/component-playground-docs#readme",
   "devDependencies": {
-    "builder-docs-archetype-dev": "^4.1.1",
+    "builder-docs-archetype-dev": "^4.2.1",
     "react-docgen": "2.7.0"
   },
   "dependencies": {
     "anchorate": "^1.1.0",
     "babel-preset-stage-1": "^6.5.0",
-    "builder": "^2.9.1",
-    "builder-docs-archetype": "^4.1.1",
+    "builder": "^3.1.0",
+    "builder-docs-archetype": "^4.2.1",
     "chai": "^3.2.0",
     "component-playground": "FormidableLabs/component-playground",
     "ecology": "^1.6.0",
@@ -50,6 +51,6 @@
     "react-router-scroll": "^0.2.0",
     "sinon": "^1.17.2",
     "sinon-chai": "^2.8.0",
-    "victory": "^0.12.1"
+    "victory": "*"
   }
 }
