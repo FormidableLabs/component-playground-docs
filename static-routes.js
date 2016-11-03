@@ -2,7 +2,7 @@
 
 module.exports = [
   "/",
-  "/about",
-  "/docs",
-  "/docs/getting-started"
+  "/about/",
+  "/docs/",
+  "/docs/getting-started/"
 ];

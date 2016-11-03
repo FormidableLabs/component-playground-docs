@@ -29,10 +29,10 @@ class App extends React.Component {
           }}
         >
           <div className="default">
-            <Link to="/about" className="formidableHeader-link" activeClassName="is-active">
+            <Link to="/about/" className="formidableHeader-link" activeClassName="is-active">
               About
             </Link>
-            <Link to="/docs" className="formidableHeader-link" activeClassName="is-active">
+            <Link to="/docs/" className="formidableHeader-link" activeClassName="is-active">
               Docs
             </Link>
             <a href="https://github.com/FormidableLabs/component-playground/issues">
