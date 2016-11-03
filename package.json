@@ -5,6 +5,7 @@
   "main": "webpack.config.dev.js",
   "scripts": {
     "preversion": "builder run npm:preversion",
+    "server-static-prod": "ecstatic --port 8080 --baseDir /open-source/component-playground build",
     "start": "builder run dev",
     "test": "builder run lint",
     "test-func-static-prod": "TEST_FUNC_BASE_DIR=/open-source/component-playground builder run test-func-static",

@@ -20,7 +20,7 @@ var validateRelative = function (abs) {
 describe("About", function () {
   it("should render a page with proper title", function () {
     return adapter.client
-      .url("/about/")
+      .url("/about")
       .getTitle().then(function (title) {
         expect(title).to.eq("Component Playground | About");
       });
@@ -30,7 +30,7 @@ describe("About", function () {
 describe("Docs", function () {
   it("should render a page with proper title", function () {
     return adapter.client
-      .url("/docs/")
+      .url("/docs")
       .getTitle().then(function (title) {
         expect(title).to.eq("Component Playground | Documentation");
       });
