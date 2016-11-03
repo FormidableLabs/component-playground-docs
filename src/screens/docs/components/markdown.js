@@ -79,6 +79,10 @@ class Markdown extends React.Component {
       const anchor = tokens[idx].attrs[1];
       if (anchor.length > 0) {
         const href = anchor[1];
+        // remove trailing slash
+        if (currentPath[currentPath.length - 1] === "/") {
+          currentPath = currentPath.slice(0, -1);
+        }
         if (href.indexOf("#") === 0) {
           tokens[idx].attrs[1][1] = `${basename}${currentPath}${href}`;
           tokens[idx].attrs.push(["aria-hidden", "true"]);

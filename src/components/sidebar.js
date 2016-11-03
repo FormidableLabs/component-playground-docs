@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router";
 import Icon from "./icon";
-import basename from "../basename";
 import MarkdownIt from "markdown-it";
 import { times } from "lodash";
 
@@ -24,7 +23,7 @@ class Sidebar extends React.Component {
             return sibling && (
               <li key={id} className="TOC-item">
                 <a
-                  href={`${basename}${targetLocation}#${sibling.anchor}`}
+                  href={`${targetLocation}#${sibling.anchor}`}
                   dangerouslySetInnerHTML={{__html: md.renderInline(sibling.content)}}
                 >
                 </a>
