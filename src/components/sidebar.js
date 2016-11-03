@@ -70,6 +70,7 @@ class Sidebar extends React.Component {
   }
 
   renderToc(targetLocation) {
+    // eject if target location does not match current path
     if (!this.props.location || (this.props.location.pathname !== targetLocation)) {
       return null;
     }
@@ -90,23 +91,23 @@ class Sidebar extends React.Component {
         </h3>
         <ul className="NavList">
           <li className="NavList-item">
-            <Link to="/docs/getting-started" className="btn btn--dark" activeClassName="is-active">
+            <Link to="/docs/getting-started/" className="btn btn--dark" activeClassName="is-active">
               <span>
                 Let’s Get Started <Icon />
               </span>
             </Link>
-            {this.renderToc("/docs/getting-started")}
+            {this.renderToc("/docs/getting-started/")}
           </li>
           <li className="NavList-item">
-            <Link to="/docs" className="btn btn--dark" activeClassName="is-active">
+            <Link to="/docs/" className="btn btn--dark" activeClassName="is-active">
               <span>
                 API <Icon />
               </span>
             </Link>
-            {this.renderToc("/docs")}
+            {this.renderToc("/docs/")}
           </li>
           <li className="NavList-item">
-            <Link to="/about" className="btn btn--dark" activeClassName="is-active">
+            <Link to="/about/" className="btn btn--dark" activeClassName="is-active">
               <span>
                 About <Icon />
               </span>
