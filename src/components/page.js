@@ -1,4 +1,5 @@
 import React from "react";
+import { ScrollContainer } from "react-router-scroll";
 import Sidebar from "./sidebar";
 
 class Page extends React.Component {
@@ -17,9 +18,11 @@ class Page extends React.Component {
                 location={this.props.location}
               />
             </div>
-            <div className={`${contentClasses} Grid-col`}>
-              { this.props.children }
-            </div>
+            <ScrollContainer scrollKey="page-content">
+              <div className={`${contentClasses} Grid-col`}>
+                { this.props.children }
+              </div>
+            </ScrollContainer>
           </section>
         </div>
       </Tag>

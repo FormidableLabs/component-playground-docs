@@ -1,13 +1,13 @@
- /* | .playground
- *   | .playgroundCode
- *     | .ReactCodeMirror.playgroundStage
- *       | .CodeMirror.cm-s-elegant.CodeMirror-wrap
- *   | .playgroundPreview
- *     | div
- *       | .previewArea
- *     | div
- *       | .playgroundError
- */
+/* | .playground
+*   | .playgroundCode
+*     | .ReactCodeMirror.playgroundStage
+*       | .CodeMirror.cm-s-elegant.CodeMirror-wrap
+*   | .playgroundPreview
+*     | div
+*       | .previewArea
+*     | div
+*       | .playgroundError
+*/
 
 .playground {
   align-items: center;
@@ -23,17 +23,39 @@
 
 .playgroundCode {
   font-size: 14px;
+  position: relative;
   width: 100%;
 
   @media (--medium-viewport) {
-    flex: 1 0 60%;
+    flex: 1 0 55%;
     font-size: 0.875rem;
+  }
+}
+
+.playgroundCode:before {
+  content: "Editable Source";
+
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+
+  background-color: var(--lighterGray);
+  color: var(--black);
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  padding: 0.5rem;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (--medium-viewport) {
+    left: -10%;
   }
 }
 
 .playgroundStage {
   background-color: var(--codeMirrorbg);
-  max-height: 500px;
+  max-height: 400px;
   padding: 2rem 10%;
   overflow: auto;
 
@@ -45,6 +67,7 @@
 .playgroundPreview {
   @media (--medium-viewport) {
     flex: 1 0 40%;
+    margin-left: 5%;
   }
 }
 

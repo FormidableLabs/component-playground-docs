@@ -13,7 +13,7 @@ class Home extends React.Component {
     return (
       <TitleMeta title="Component Playground">
         <main className="Main">
-          <div className="Hero Grid">
+          <div className="Hero">
             <h2 className="Hero-heading">
               Render React.js components with editable source & live preview
             </h2>
@@ -24,7 +24,9 @@ class Home extends React.Component {
                 <iframe title="Stars on GitHub" src="https://ghbtns.com/github-btn.html?user=formidablelabs&repo=component-playground&type=star&count=true" frameBorder="0" scrolling="0" width="90px" height="20px"></iframe>
               </p>
             </div>
-            <div className="Hero-example Grid-col">
+          </div>
+          <div className="Grid">
+            <div className="Grid-col">
               <Playground
                 codeText={componentExample}
                 scope={{ React, VictoryPie, ReactDOM, random, range }}
