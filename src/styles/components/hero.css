@@ -28,8 +28,3 @@
   font-size: inherit;
   padding: 0;
 }
-
-.Hero-example {
-  margin-top: var(--gutterSmall);
-  width: 100%;
-}
